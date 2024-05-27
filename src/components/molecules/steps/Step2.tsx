@@ -4,6 +4,7 @@ import Image from "next/image";
 import { InputWithLabel } from "@/components/atoms/InputWithLabel";
 import { Button } from "@/components/atoms/Button";
 import { InputFile } from "@/components/atoms/InputFile";
+import BankAccount from "@/components/atoms/BankAccount";
 
 export default function Step2() {
   return (
@@ -26,30 +27,18 @@ export default function Step2() {
             Total: <strong>$580 USD</strong>
           </p>
 
-          <div className="flex gap-4 mt-12">
-            <div className="relative h-[30px] w-[60px]">
-              <Image fill alt="image-bank-bca" src="/logo-bank/logo_bank.jpg" />
-            </div>
-            <div>
-              <p className="text-base text-cyan-900">Bank Central Asia</p>
-              <p className="text-base text-cyan-900">2208 1996</p>
-              <p className="text-base text-cyan-900">BuildWith Angga</p>
-            </div>
-          </div>
-          <div className="flex gap-4 mt-5">
-            <div className="relative h-[30px] w-[60px]">
-              <Image
-                fill
-                alt="image-bank-bca"
-                src="/logo-bank/logo_bank-1.jpg"
-              />
-            </div>
-            <div>
-              <p className="text-base text-cyan-900">Bank Mandiri</p>
-              <p className="text-base text-cyan-900">2208 1996</p>
-              <p className="text-base text-cyan-900">BuildWith Angga</p>
-            </div>
-          </div>
+          <BankAccount
+            images="/logo-bank/logo_bank.jpg"
+            bankName="Bank Central Asia"
+            noRek="2208 1996"
+            name="Diko Mahendra"
+          />
+          <BankAccount
+            images="/logo-bank/logo_bank-1.jpg"
+            bankName="Bank Mandiri"
+            noRek="2208 1996"
+            name="Diko Mahendra"
+          />
         </div>
         <div className="col-span-1 space-y-5 pr-[12rem]">
           <InputFile
