@@ -1,5 +1,5 @@
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "@/components/atoms/Input";
+import { Label } from "@/components/atoms/Label";
 
 type TInputWithLabel = {
   type?: string;
@@ -7,14 +7,14 @@ type TInputWithLabel = {
   placeholder: string;
 };
 
-export function InputFile({ type, label, placeholder }: TInputWithLabel) {
+export function InputWithLabel({ type, label, placeholder }: TInputWithLabel) {
   return (
     <div className="grid w-full items-center">
       <Label className="text-base text-cyan-800" htmlFor={type}>
         {label}
       </Label>
       <Input
-        className="text-base w-full py-4 mt-2 text-cyan-800"
+        className="text-base w-full py-4 mt-2"
         type={type}
         id={type}
         placeholder={placeholder}

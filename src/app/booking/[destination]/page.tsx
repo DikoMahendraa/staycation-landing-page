@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { InputFile } from "@/components/ui/inputFile";
-import { InputWithLabel } from "@/components/ui/inputWithLabel";
+import { Button } from "@/components/atoms/Button";
+import { InputFile } from "@/components/atoms/InputFile";
+import { InputWithLabel } from "@/components/atoms/InputWithLabel";
 import Image from "next/image";
 import React from "react";
 
