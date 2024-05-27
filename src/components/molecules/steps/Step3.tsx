@@ -2,6 +2,7 @@ import { Button } from "@/components/atoms/Button";
 import Image from "next/image";
 import React from "react";
 import { LabelHeader } from "../HeaderBookingStep";
+import Link from "next/link";
 
 export default function Step3() {
   return (
@@ -20,9 +21,11 @@ export default function Step3() {
 
       <div className="flex justify-center items-center mt-24">
         <div className="flex flex-col gap-4 w-[20rem]">
-          <Button size="lg" className="bg-cyan-800 text-base w-full">
-            Back To Home
-          </Button>
+          <Link href="/">
+            <Button size="lg" className="bg-cyan-800 text-base w-full">
+              Back To Home
+            </Button>
+          </Link>
         </div>
       </div>
     </>

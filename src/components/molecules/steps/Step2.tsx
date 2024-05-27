@@ -5,8 +5,11 @@ import { InputWithLabel } from "@/components/atoms/InputWithLabel";
 import { Button } from "@/components/atoms/Button";
 import { InputFile } from "@/components/atoms/InputFile";
 import BankAccount from "@/components/atoms/BankAccount";
+import { useSetAtom } from "jotai";
+import { step } from "@/components/pages/BookingDestination";
 
 export default function Step2() {
+  const setStep = useSetAtom(step);
   return (
     <>
       <LabelHeader
@@ -59,11 +62,19 @@ export default function Step2() {
 
       <div className="flex justify-center items-center mt-24">
         <div className="flex flex-col gap-4 w-[20rem]">
-          <Button size="lg" className="bg-cyan-800 text-base w-full">
+          <Button
+            onClick={() => setStep(2)}
+            size="lg"
+            className="bg-cyan-800 text-base w-full"
+          >
             Continue to Book
           </Button>
 
-          <Button size="lg" className="bg-gray-200 text-base w-full">
+          <Button
+            onClick={() => setStep(1)}
+            size="lg"
+            className="bg-gray-200 text-base w-full"
+          >
             Cancel
           </Button>
         </div>
