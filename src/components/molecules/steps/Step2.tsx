@@ -1,5 +1,5 @@
 import React from "react";
-import { LabelHeader } from "../HeaderBookingStep";
+import { LabelHeader } from "../headers/HeaderBookingStep";
 import Image from "next/image";
 import { InputWithLabel } from "@/components/atoms/InputWithLabel";
 import { Button } from "@/components/atoms/Button";

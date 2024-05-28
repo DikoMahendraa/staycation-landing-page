@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "../atoms/Button";
-import Ratings from "../atoms/Ratings";
+import Ratings from "../../atoms/Ratings";
+import { Button } from "../../atoms/Button";
 
-export default function TestimoniMain() {
+export default function TestimonyDetail() {
   return (
     <div className="grid grid-cols-2 mt-24">
       <div className="col-span-1">
@@ -29,8 +29,9 @@ export default function TestimoniMain() {
         <p className="text-gray-400 text-base w-1/2 mt-5 mb-7">
           Diko Mahendra, Frontend Developer
         </p>
+
         <div>
-          <Button className="bg-cyan-600 font-light text-base">
+          <Button className="bg-cyan-600 text-base font-light mt-12">
             Read Their Story
           </Button>
         </div>

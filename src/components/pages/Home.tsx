@@ -3,7 +3,7 @@ import Hero from "@/components/molecules/Hero";
 import HotelsWithLargeLiving from "@/components/molecules/HotelsWithLargeLiving";
 import HouseBeauty from "@/components/molecules/HouseBeauty";
 import MostPicked from "@/components/molecules/MostPicked";
-import TestimoniMain from "@/components/molecules/TestimoniMain";
+import TestimonyMain from "@/components/molecules/testimony/TestimonyMain";
 
 export default function HomeComponent() {
   return (
@@ -13,7 +13,7 @@ export default function HomeComponent() {
       <HouseBeauty />
       <HotelsWithLargeLiving />
       <ApartmentWithKitchen />
-      <TestimoniMain />
+      <TestimonyMain />
     </main>
   );
 }

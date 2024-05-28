@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { InputWithLabel } from "../../atoms/InputWithLabel";
-import { LabelHeader } from "../HeaderBookingStep";
+import { LabelHeader } from "../headers/HeaderBookingStep";
 import { Button } from "@/components/atoms/Button";
 import { useSetAtom } from "jotai";
 import { step } from "@/components/pages/BookingDestination";

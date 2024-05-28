@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../atoms/Button";
 import { BaggageClaim, Clapperboard, MapPinned } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -15,7 +16,9 @@ export default function Hero() {
           make another memorable moments.
         </p>
 
-        <Button className="bg-cyan-600 font-light">Show Me Now</Button>
+        <Link href="/charless-village">
+          <Button className="bg-cyan-600 font-light">Show Me Now</Button>
+        </Link>
 
         <div className="flex items-center gap-6 mt-14">
           <div className="flex-col flex gap-2">
