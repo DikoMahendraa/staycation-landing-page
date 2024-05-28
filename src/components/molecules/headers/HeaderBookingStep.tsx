@@ -1,4 +1,5 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 type TLabelHeader = {
   description?: string;
@@ -16,20 +17,37 @@ export const LabelHeader = ({ label, description }: TLabelHeader) => {
   );
 };
 
-export default function HeaderBookingStep() {
+export default function HeaderBookingStep({
+  step,
+  currentStep,
+}: {
+  currentStep: number;
+  step: number;
+}) {
   return (
     <div className="flex justify-center items-center mt-14">
-      <div className="w-20 h-20 rounded-full border border-gray-300 p-2 flex justify-center items-center">
-        <p className="text-2xl">1</p>
-      </div>
-      <div className="h-1 w-40 bg-gray-300" />
-      <div className="w-20 h-20 rounded-full border border-gray-300 p-2 flex justify-center items-center">
-        <p className="text-2xl">2</p>
-      </div>
-      <div className="h-1 w-40 bg-gray-300" />
-      <div className="w-20 h-20 rounded-full border border-gray-300 p-2 flex justify-center items-center">
-        <p className="text-2xl">2</p>
-      </div>
+      {[...Array(step)].map((item, index) => (
+        <>
+          <div
+            className={twMerge(
+              "w-20 h-20 rounded-full border border-gray-300 p-2 flex justify-center items-center",
+              currentStep >= index
+                ? "bg-cyan-500 text-white"
+                : "bg-gray-100 text-gray-300"
+            )}
+          >
+            <p className="text-2xl">{index + 1}</p>
+          </div>
+          {!(index + 1 === step) && (
+            <div
+              className={twMerge(
+                "h-1 w-40",
+                currentStep <= index ? "bg-gray-300" : "bg-cyan-500"
+              )}
+            />
+          )}
+        </>
+      ))}
     </div>
   );
 }

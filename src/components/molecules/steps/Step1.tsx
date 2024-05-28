@@ -5,6 +5,7 @@ import { LabelHeader } from "../headers/HeaderBookingStep";
 import { Button } from "@/components/atoms/Button";
 import { useSetAtom } from "jotai";
 import { step } from "@/components/pages/BookingDestination";
+import Link from "next/link";
 
 export default function Step1() {
   const setStep = useSetAtom(step);
@@ -72,9 +73,11 @@ export default function Step1() {
             Continue to Book
           </Button>
 
-          <Button size="lg" className="bg-gray-200 text-base w-full">
-            Cancel
-          </Button>
+          <Link href="/xyc-2xs2-mkl29-xnj361-z182">
+            <Button size="lg" className="bg-gray-200 text-base w-full">
+              Cancel
+            </Button>
+          </Link>
         </div>
       </div>
     </>

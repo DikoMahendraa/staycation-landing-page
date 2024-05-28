@@ -26,7 +26,7 @@ export default function BookingDestination() {
 
   return (
     <main className="container mx-auto">
-      <HeaderBookingStep />
+      <HeaderBookingStep step={3} currentStep={_step} />
       {switchStep()}
     </main>
   );
