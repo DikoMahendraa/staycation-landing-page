@@ -2,7 +2,22 @@ import React from "react";
 import Card from "./Card";
 import { Label } from "../atoms/Label";
 
-export default function MostPicked() {
+type TResponseGetData = Array<{
+  name: string;
+  image: string;
+  location: string;
+  price: number;
+  isPopular: boolean;
+}>;
+
+async function getData() {
+  const response = await fetch("http://localhost:3000/json/most-picked.json");
+  return response.json();
+}
+
+export default async function MostPicked() {
+  const data: TResponseGetData = await getData();
+
   return (
     <div className="mt-16">
       <Label className="text-lg text-cyan-800 font-semibold">Most Picked</Label>
@@ -18,70 +33,36 @@ export default function MostPicked() {
             hasBadge={true}
             badgeLabel={
               <>
-                <strong className="font-semibold">50%</strong> per night
+                <strong className="font-semibold">{data[0].price}%</strong> per
+                night
               </>
             }
           />
         </div>
         <div className="col-span-8 grid grid-cols-2 gap-8">
-          <div className="col-span-8 gap-4 grid grid-cols-2">
-            <Card
-              hasShadowImage
-              price="$50"
-              hasBadge={true}
-              badgeLabel={
-                <>
-                  <strong className="font-semibold">50%</strong> per night
-                </>
-              }
-              name="Blue Ocean"
-              place="Jakarta, Indonesia"
-              className="relative aspect-video rounded-2xl overflow-hidden"
-              images="/most-picked/most-picked-big.png"
-            />
-            <Card
-              hasShadowImage
-              price="$50"
-              name="Blue Ocean"
-              hasBadge={true}
-              badgeLabel={
-                <>
-                  <strong className="font-semibold">50%</strong> per night
-                </>
-              }
-              place="Jakarta, Indonesia"
-              className="relative aspect-video rounded-2xl overflow-hidden"
-              images="/most-picked/most-picked-big.png"
-            />
-            <Card
-              hasShadowImage
-              price="$50"
-              name="Blue Ocean"
-              hasBadge={true}
-              badgeLabel={
-                <>
-                  <strong className="font-semibold">50%</strong> per night
-                </>
-              }
-              place="Jakarta, Indonesia"
-              className="relative aspect-video rounded-2xl overflow-hidden"
-              images="/most-picked/most-picked-big.png"
-            />
-            <Card
-              hasShadowImage
-              price="$50"
-              name="Blue Ocean"
-              hasBadge={true}
-              badgeLabel={
-                <>
-                  <strong className="font-semibold">50%</strong> per night
-                </>
-              }
-              place="Jakarta, Indonesia"
-              className="relative aspect-video rounded-2xl overflow-hidden"
-              images="/most-picked/most-picked-big.png"
-            />
-          </div>
+          {data.map((item, index) => {
+            console.log(item.image);
+            if (index !== 0) {
+              return (
+                <Card
+                  key={index}
+                  hasShadowImage
+                  price={String(item.price)}
+                  hasBadge={true}
+                  badgeLabel={
+                    <>
+                      <strong className="font-semibold">{item.price}$</strong>{" "}
+                      per night
+                    </>
+                  }
+                  name={item.name}
+                  place={item.location}
+                  className="relative aspect-video rounded-2xl overflow-hidden"
+                  images={item.image}
+                />
+              );
+            }
+          })}
         </div>
       </div>
     </div>

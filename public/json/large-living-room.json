@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Grand Suite Hotel",
+    "image": "/large-living-room/pic.jpg",
+    "location": "Jakarta, Indonesia",
+    "price": 300,
+    "isPopular": true
+  },
+  {
+    "name": "Luxury Palace",
+    "image": "/large-living-room/pic-1.jpg",
+    "location": "Bali, Indonesia",
+    "price": 400,
+    "isPopular": true
+  },
+  {
+    "name": "Royal Residence",
+    "image": "/large-living-room/pic-2.jpg",
+    "location": "Bandung, Indonesia",
+    "price": 350,
+    "isPopular": false
+  },
+  {
+    "name": "Elegant Stay",
+    "image": "/large-living-room/pic-3.jpg",
+    "location": "Surabaya, Indonesia",
+    "price": 280,
+    "isPopular": true
+  }
+]

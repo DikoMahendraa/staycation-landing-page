@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Skyline Apartment",
+    "image": "/kitchen-set/pic.jpg",
+    "location": "Jakarta, Indonesia",
+    "price": 250,
+    "isPopular": true
+  },
+  {
+    "name": "Green Park Residence",
+    "image": "/kitchen-set/pic-1.jpg",
+    "location": "Bandung, Indonesia",
+    "price": 180,
+    "isPopular": false
+  },
+  {
+    "name": "Ocean View Condo",
+    "image": "/kitchen-set/pic-2.jpg",
+    "location": "Bali, Indonesia",
+    "price": 300,
+    "isPopular": true
+  },
+  {
+    "name": "City Center Apartment",
+    "image": "/kitchen-set/pic-3.jpg",
+    "location": "Surabaya, Indonesia",
+    "price": 220,
+    "isPopular": false
+  }
+]

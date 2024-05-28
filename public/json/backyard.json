@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Backyard Bliss",
+    "image": "/beauty-backyard/pic-3.jpg",
+    "location": "Yogyakarta, Indonesia",
+    "price": 180,
+    "isPopular": false
+  },
+  {
+    "name": "Nature's Retreat",
+    "image": "/beauty-backyard/pic-2.jpg",
+    "location": "Bandung, Indonesia",
+    "price": 250,
+    "isPopular": true
+  },
+  {
+    "name": "Sunny Garden Hotel",
+    "image": "/beauty-backyard/pic-1.jpg",
+    "location": "Surabaya, Indonesia",
+    "price": 200,
+    "isPopular": false
+  },
+  {
+    "name": "Green Oasis Hotel",
+    "image": "/beauty-backyard/pic.jpg",
+    "location": "Jakarta, Indonesia",
+    "price": 270,
+    "isPopular": true
+  }
+]
