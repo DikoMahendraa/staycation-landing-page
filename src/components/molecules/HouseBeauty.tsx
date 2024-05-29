@@ -1,6 +1,7 @@
 import React from "react";
-import { Label } from "../atoms/Label";
-import Card from "./Card";
+import { Label } from "@/components/atoms/Label";
+
+import { ContainHouseBeauty } from "./contains/ContainHouseBeauty";
 
 type TResponseGetData = Array<{
   name: string;
@@ -23,27 +24,7 @@ export default async function HouseBeauty() {
       <Label className="text-lg text-cyan-800 font-semibold">
         Houses with beauty backyard
       </Label>
-
-      <div className="grid grid-cols-4 gap-8 mt-5">
-        {data.map((item, index) => (
-          <div key={index}>
-            <Card
-              hasBadge={item.isPopular}
-              badgeLabel={
-                <>
-                  <strong>Popular</strong> Choice
-                </>
-              }
-              images={item.image}
-              className="relative aspect-video"
-              name={item.name}
-              place={item.location}
-              hasInsideDescription={false}
-              hasBottomDescription
-            />
-          </div>
-        ))}
-      </div>
+      <ContainHouseBeauty data={data} />
     </div>
   );
 }

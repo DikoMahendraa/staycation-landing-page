@@ -1,6 +1,7 @@
 import React from "react";
 import { Label } from "../atoms/Label";
 import Card from "./Card";
+import { ContainHotelLiving } from "./contains/ContainHotelLiving";
 
 type TResponseGetData = Array<{
   name: string;
@@ -24,27 +25,7 @@ export default async function HotelsWithLargeLiving() {
       <Label className="text-lg text-cyan-800 font-semibold">
         Hotels with large living room
       </Label>
-
-      <div className="grid grid-cols-4 gap-8 mt-5">
-        {data.map((item, index) => (
-          <div key={index}>
-            <Card
-              hasBadge={item.isPopular}
-              badgeLabel={
-                <>
-                  <strong>Popular</strong> Choice
-                </>
-              }
-              images={item.image}
-              className="relative aspect-video"
-              name={item.name}
-              place={item.location}
-              hasInsideDescription={false}
-              hasBottomDescription
-            />
-          </div>
-        ))}
-      </div>
+      <ContainHotelLiving data={data} />
     </div>
   );
 }

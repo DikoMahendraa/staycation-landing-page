@@ -1,6 +1,8 @@
 import React from "react";
-import { Label } from "../atoms/Label";
-import Card from "./Card";
+
+import { Label } from "@/components/atoms/Label";
+import Card from "@/components/molecules/Card";
+import { ContainApartmenKitchen } from "./contains/ContainApartmenKitchen";
 
 type TResponseGetData = Array<{
   name: string;
@@ -26,26 +28,7 @@ export default async function ApartmentWithKitchen() {
         Apartments with kitchen set
       </Label>
 
-      <div className="grid grid-cols-4 gap-8 mt-5">
-        {data.map((item, index) => (
-          <div key={index}>
-            <Card
-              hasBadge={item.isPopular}
-              badgeLabel={
-                <>
-                  <strong>Popular</strong> Choice
-                </>
-              }
-              images={item.image}
-              className="relative aspect-video"
-              name={item.name}
-              place={item.location}
-              hasInsideDescription={false}
-              hasBottomDescription
-            />
-          </div>
-        ))}
-      </div>
+      <ContainApartmenKitchen data={data} />
     </div>
   );
 }

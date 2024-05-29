@@ -3,7 +3,7 @@ import HeaderBreadcrumb from "../molecules/headers/HeaderBreadcrumb";
 import TestimoniDetail from "../molecules/testimony/TestimonyDetail";
 import ImageDetailRoom from "../molecules/ImageDetailRoom";
 import DescriptionDetailRoom from "../molecules/DescriptionDetailRoom";
-import FormPickRoom from "../atoms/FormPickRoom";
+import FormPickRoom from "../molecules/FormPickRoom";
 import SuggestionTreasure from "../molecules/SuggestionTreasure";
 
 export default function DetailRoom() {

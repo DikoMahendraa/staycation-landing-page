@@ -14,6 +14,7 @@ export default function TestimonyMain() {
             fill
             priority
             alt="family-feedback-page"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className=" w-[365px] h-[501px] border border-gray-300 absolute -z-10 rounded-2xl"></div>
         </div>

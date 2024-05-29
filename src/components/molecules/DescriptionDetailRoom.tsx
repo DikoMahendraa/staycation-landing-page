@@ -1,3 +1,6 @@
+"use client";
+
+import { useAtomValue } from "jotai";
 import {
   AirVent,
   Bath,
@@ -9,8 +12,11 @@ import {
   Wifi,
 } from "lucide-react";
 import React from "react";
+import { detailCardItem } from "./contains/ContainMostPicked";
 
 export default function DescriptionDetailRoom() {
+  const { name, location } = useAtomValue(detailCardItem);
+
   return (
     <div className="cols-span-1">
       <p className="text-xl text-cyan-800 mb-4">About the place</p>

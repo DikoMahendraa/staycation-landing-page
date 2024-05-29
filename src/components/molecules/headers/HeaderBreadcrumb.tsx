@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -5,9 +7,13 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/atoms/Breadcrumb";
+import { useAtomValue } from "jotai";
 import React from "react";
+import { detailCardItem } from "../contains/ContainMostPicked";
 
 export default function HeaderBreadcrumb() {
+  const { name, location } = useAtomValue(detailCardItem);
+
   return (
     <header className="flex items-center justify-center text-center relative mt-16">
       <div className="absolute left-0">
@@ -24,15 +30,15 @@ export default function HeaderBreadcrumb() {
                 className="text-cyan-800 text-base"
                 href="/components"
               >
-                House Details
+                {name}
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </div>
       <div>
-        <p className="text-4xl text-cyan-800 font-semibold">Village Angga</p>
-        <p className="text-base text-gray-400 mt-2">Bogor, Indonesia</p>
+        <p className="text-4xl text-cyan-800 font-semibold">{name}</p>
+        <p className="text-base text-gray-400 mt-2">{location}</p>
       </div>
     </header>
   );
