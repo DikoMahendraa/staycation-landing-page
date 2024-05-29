@@ -4,15 +4,36 @@ import React from "react";
 import { Button } from "../atoms/Button";
 import { Minus, Plus } from "lucide-react";
 import { DatePickerWithRange } from "../atoms/Datepicker";
-import { atom, useAtomValue, useAtom } from "jotai";
+import { atom, useAtomValue, useAtom, useSetAtom } from "jotai";
 import Link from "next/link";
 import { detailCardItem } from "./contains/ContainMostPicked";
+import { atomWithStorage } from "jotai/utils";
 
 export const atomUnit = atom(1);
+export const atomBooking = atomWithStorage("booking-detail", {
+  total: 0,
+  night: 1,
+  location: "",
+  name: "",
+  image: "",
+});
 
 export default function FormPickRoom() {
   const [perNight, setPerNight] = useAtom(atomUnit);
-  const { price } = useAtomValue(detailCardItem);
+  const { price, location, name, image } = useAtomValue(detailCardItem);
+  const setAtomBooking = useSetAtom(atomBooking);
+
+  const totalPayment = perNight * price;
+
+  const onSetBookingPlace = () => {
+    setAtomBooking({
+      total: totalPayment,
+      night: perNight,
+      location,
+      name,
+      image,
+    });
+  };
 
   return (
     <div className="cols-span-1 p-8">
@@ -59,12 +80,13 @@ export default function FormPickRoom() {
           <DatePickerWithRange howLong={perNight} />
 
           <p className="text-base font-light text-gray-300 mt-3">
-            You will pay{" "}
-            <span className="text-cyan-800">${perNight * price}</span> USD per
+            You will pay <span className="text-cyan-800">${totalPayment}</span>{" "}
+            USD per
             <span className="text-cyan-800"> {perNight} nights</span>
           </p>
-          <Link href="/booking/xyc-2xs2-mkl29-xnj361-z182">
+          <Link href={`/booking/${name.replaceAll(" ", "-").toLowerCase()}`}>
             <Button
+              onClick={onSetBookingPlace}
               disabled={perNight <= 0}
               size="lg"
               className="w-full bg-cyan-600 mt-12 text-base"

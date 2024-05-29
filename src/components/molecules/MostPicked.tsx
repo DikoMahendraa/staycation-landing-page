@@ -8,6 +8,7 @@ export type TResponseGetData = Array<{
   image: string;
   location: string;
   price: number;
+  description: string;
   isPopular: boolean;
 }>;
 

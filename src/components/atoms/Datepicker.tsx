@@ -45,7 +45,7 @@ export function DatePickerWithRange({
             )}
           >
             <div className="absolute cursor-pointer left-0 bg-cyan-800 h-full px-4 flex justify-center items-center rounded-e-xl">
-              <CalendarIcon size={32} className="text-white" />
+              <CalendarIcon size={26} className="text-white" />
             </div>
 
             {date?.from ? (
