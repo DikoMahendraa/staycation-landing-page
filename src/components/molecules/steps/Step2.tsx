@@ -1,15 +1,18 @@
 import React from "react";
 import { LabelHeader } from "../headers/HeaderBookingStep";
-import Image from "next/image";
 import { InputWithLabel } from "@/components/atoms/InputWithLabel";
-import { Button } from "@/components/atoms/Button";
 import { InputFile } from "@/components/atoms/InputFile";
 import BankAccount from "@/components/atoms/BankAccount";
-import { useSetAtom } from "jotai";
-import { step } from "@/components/pages/BookingDestination";
+import { useFormContext } from "react-hook-form";
+import { Schema2 } from "@/components/pages/BookingDestination";
 
 export default function Step2() {
-  const setStep = useSetAtom(step);
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<Schema2>();
+
+  console.log({ errors });
   return (
     <>
       <LabelHeader
@@ -45,38 +48,30 @@ export default function Step2() {
         </div>
         <div className="col-span-1 space-y-5 pr-[12rem]">
           <InputFile
+            required
+            register={register}
+            message={errors?.upload_invoice?.message as string}
+            name="upload_invoice"
             label="Upload Bukti Transfer"
             type="file"
             placeholder="Please type here ..."
           />
           <InputWithLabel
+            required
+            name="bank"
+            register={register}
             label="Asal Bank"
+            message={errors?.bank?.message as string}
             placeholder="Please type here ..."
           />
           <InputWithLabel
+            required
+            name="account_name"
+            register={register}
             label="Nama Pengirim"
+            message={errors?.account_name?.message as string}
             placeholder="Please type here ..."
           />
-        </div>
-      </div>
-
-      <div className="flex justify-center items-center mt-24">
-        <div className="flex flex-col gap-4 w-[20rem]">
-          <Button
-            onClick={() => setStep(2)}
-            size="lg"
-            className="bg-cyan-800 text-base w-full"
-          >
-            Continue to Book
-          </Button>
-
-          <Button
-            onClick={() => setStep(1)}
-            size="lg"
-            className="bg-gray-200 text-base w-full"
-          >
-            Cancel
-          </Button>
         </div>
       </div>
     </>

@@ -26,9 +26,10 @@ export default function HeaderBookingStep({
 }) {
   return (
     <div className="flex justify-center items-center mt-14">
-      {[...Array(step)].map((item, index) => (
+      {[...Array(step)].map((_, index) => (
         <>
           <div
+            key={index + 1}
             className={twMerge(
               "w-20 h-20 rounded-full border border-gray-300 p-2 flex justify-center items-center",
               currentStep >= index

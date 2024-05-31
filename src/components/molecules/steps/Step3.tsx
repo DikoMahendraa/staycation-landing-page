@@ -18,16 +18,6 @@ export default function Step3() {
           accepted
         </p>
       </div>
-
-      <div className="flex justify-center items-center mt-24">
-        <div className="flex flex-col gap-4 w-[20rem]">
-          <Link href="/">
-            <Button size="lg" className="bg-cyan-800 text-base w-full">
-              Back To Home
-            </Button>
-          </Link>
-        </div>
-      </div>
     </>
   );
 }
