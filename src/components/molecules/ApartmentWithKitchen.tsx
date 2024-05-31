@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Label } from "@/components/atoms/Label";
-import Card from "@/components/molecules/Card";
 import { ContainApartmenKitchen } from "./contains/ContainApartmenKitchen";
 
 type TResponseGetData = Array<{
@@ -10,6 +9,7 @@ type TResponseGetData = Array<{
   location: string;
   price: number;
   isPopular: boolean;
+  description: string;
 }>;
 
 async function getData() {

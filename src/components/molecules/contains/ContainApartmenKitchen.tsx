@@ -12,6 +12,7 @@ export const detailCardItem = atomWithStorage<TResponseGetData[0]>("detail", {
   location: "",
   price: 0,
   isPopular: false,
+  description: "",
 });
 
 export function ContainApartmenKitchen({ data }: { data: TResponseGetData }) {

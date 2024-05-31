@@ -1,6 +1,5 @@
 import React from "react";
 import { Label } from "../atoms/Label";
-import Card from "./Card";
 import { ContainHotelLiving } from "./contains/ContainHotelLiving";
 
 type TResponseGetData = Array<{
@@ -9,6 +8,7 @@ type TResponseGetData = Array<{
   location: string;
   price: number;
   isPopular: boolean;
+  description: string;
 }>;
 
 async function getData() {

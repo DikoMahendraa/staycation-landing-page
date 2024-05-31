@@ -10,7 +10,6 @@ type TPropsCard = {
   className?: string;
   hasBadge?: boolean;
   badgeLabel?: string | React.ReactNode;
-  type?: "large" | "small" | "medium";
   hasBottomDescription?: boolean;
   hasInsideDescription?: boolean;
   hasShadowImage?: boolean;
@@ -24,7 +23,6 @@ export default function Card({
   className = "relative",
   hasBadge = true,
   badgeLabel,
-  type = "large",
   hasBottomDescription = false,
   hasInsideDescription = true,
   hasShadowImage = false,

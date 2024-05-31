@@ -12,7 +12,6 @@ export default function Step2() {
     formState: { errors },
   } = useFormContext<Schema2>();
 
-  console.log({ errors });
   return (
     <>
       <LabelHeader

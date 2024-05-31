@@ -1,8 +1,6 @@
-import { Button } from "@/components/atoms/Button";
 import Image from "next/image";
 import React from "react";
 import { LabelHeader } from "../headers/HeaderBookingStep";
-import Link from "next/link";
 
 export default function Step3() {
   return (

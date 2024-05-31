@@ -1,7 +1,6 @@
 import { Input } from "@/components/atoms/Input";
 import { Label } from "@/components/atoms/Label";
 import { UseFormRegister } from "react-hook-form";
-import { Schema } from "../pages/BookingDestination";
 
 type TInputWithLabel = {
   type?: string;
