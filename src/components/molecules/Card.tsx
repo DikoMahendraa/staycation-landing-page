@@ -65,8 +65,8 @@ export default function Card({
       </div>
       {hasBottomDescription && (
         <div onClick={onClick} className="mt-2">
-          <p className="text-lg text-cyan-800 mb-1">{name}</p>
-          <p className="text-base text-gray-400">{place}</p>
+          <p className="lg:text-lg text-sm text-cyan-800 mb-1">{name}</p>
+          <p className="lg:text-base text-xs text-gray-400">{place}</p>
         </div>
       )}
     </>
