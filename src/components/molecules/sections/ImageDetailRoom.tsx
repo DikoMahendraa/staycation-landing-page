@@ -8,7 +8,7 @@ import { detailCardItem } from "@/components/molecules/contains/ContainMostPicke
 export default function ImageDetailRoom() {
   const { image } = useAtomValue(detailCardItem);
   return (
-    <div className="grid lg:grid-cols-2 lg:gap-8 lg:mt-16 lg:px-0 px-4">
+    <div className="grid lg:grid-cols-2 lg:gap-8 lg:mt-16">
       <div className="lg:col-span-1">
         <div className="relative aspect-square lg:w-full lg:h-full">
           <Image
