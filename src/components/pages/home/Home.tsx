@@ -9,8 +9,8 @@ export default function HomeComponent() {
   return (
     <main className="lg:mx-auto lg:container lg:px-0 px-4">
       <Hero />
-      {/* <MostPicked />
-      <HouseBeauty />
+      <MostPicked />
+      {/* <HouseBeauty />
       <HotelsWithLargeLiving />
       <ApartmentWithKitchen />
       <TestimonyMain /> */}
