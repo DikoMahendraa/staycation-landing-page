@@ -42,7 +42,7 @@ export default function Navbar({ logoOnly = false }: { logoOnly?: boolean }) {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-base font-normal hover:text-cyan-600"
+                    className="text-base text-gray-400 font-normal hover:text-cyan-600"
                   >
                     {item.label}
                   </Link>
