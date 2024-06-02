@@ -8,18 +8,18 @@ import SuggestionTreasure from "@/components/molecules/sections/SuggestionTreasu
 
 export default function DetailRoom() {
   return (
-    <main className="container mx-auto">
+    <main className="lg:container lg:mx-auto">
       <HeaderBreadcrumb />
 
       <ImageDetailRoom />
 
-      <div className="grid grid-cols-2 gap-8 mt-16">
+      {/* <div className="grid grid-cols-2 gap-8 mt-16">
         <DescriptionDetailRoom />
         <FormPickRoom />
       </div>
 
       <SuggestionTreasure />
-      <TestimoniDetail />
+      <TestimoniDetail /> */}
     </main>
   );
 }
